@@ -60,6 +60,11 @@ if (test == FALSE) {
   install.packages("weightr")
   require(weightr)
 }
+test<-require(robumeta)   
+if (test == FALSE) {
+  install.packages("robumeta")
+  require(robumeta)
+}
 rm(test)
 
 # Define functions
@@ -382,8 +387,16 @@ MVfull.coef <- coef_test(MVfull,#estimation model above
                          vcov = "CR2") #estimation method (CR2 is best)
 MVfull.coef
 
-# Forest plot
-forest(MVfull)
+# Forest plot with RVE
+library(robumeta)
+
+setwd("xxxxx")
+
+df$label <- paste(df$Authors, df$Year, sep = ", ")
+robu_intercept <- robu(formula = ES ~ 1, data = df, studynum = StudyID, var.eff.size = var)
+png(filename = "Forest Plot.png", height = 45, width = 7.5, units = "in", res = 1000)
+forest.robu(robu_intercept, es.lab = "ESId", study.lab = "label")
+dev.off()
 
 #################################################################################
 # Calculating Marginal Means
