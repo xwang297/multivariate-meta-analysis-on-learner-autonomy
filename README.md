@@ -1,6 +1,6 @@
 # A Meta-analysis of the Effects of Strategy Instruction on Chinese College Students’ English Achievement and Learner Autonomy 
 
-Authors: Xue Wang, Qiyang Zhang, Huanchun Chen, Amanda J. Neitzel
+Authors: Xue Wang, Qiyang Zhang, Huanchun Chen, Amanda J. Neitzel, and Marcia Davis
 
 
 
